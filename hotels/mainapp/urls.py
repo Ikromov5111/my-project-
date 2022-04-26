@@ -31,7 +31,7 @@ urlpatterns = [
     #saridev pathlari
    # path('article', views.articleList, name = 'article_list')
    
-   path("blog-post/", views.aticleList , name ="blog_post"),
-   path("blog_c/", views.article_c,name="blog_c"),
+#    path("blog-post/", views.aticleList , name ="blog_post"),
+#    path("blog_c/", views.article_c,name="blog_c"),
    path("testirov/", views.test , name ="testtirov"),
 ]

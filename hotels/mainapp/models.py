@@ -55,23 +55,23 @@ class Worker(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
     
-class Article(models.Model):
-    title = models.CharField(max_length = 150)
-    summary = models.CharField(max_length= 200,blank = True)
-    body = models.TextField()
-    photo = models.ImageField(upload_to ='images/' , height_field=100, width_field=100)
-    date = models.DateTimeField(auto_now_add = True)
-    author = models.ForeignKey(
-        get_user_model(),
-        on_delete = models.CASCADE
-    )
+# class Article(models.Model):
+#     title = models.CharField(max_length = 150)
+#     summary = models.CharField(max_length= 200,blank = True)
+#     body = models.TextField()
+#     photo = models.ImageField(upload_to ='images/' , height_field=100, width_field=100)
+#     date = models.DateTimeField(auto_now_add = True)
+#     author = models.ForeignKey(
+#         get_user_model(),
+#         on_delete = models.CASCADE
+#     )
  
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
     
      
-    def get_absolute_url(self):
-        return reverse("article_detail", agrs=[str(self.id)])
+#     def get_absolute_url(self):
+#         return reverse("article_detail", agrs=[str(self.id)])
     
         
 class Room(models.Model):

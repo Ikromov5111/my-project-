@@ -129,7 +129,7 @@
                           
                                     </div>
                                 </article>       
-                                {% for article in articles %}
+                                {% for articl in articles %}
                                 <article class="row blog_item">
                                     <div class="col-md-3">
                                         <div class="blog_info text-right">
@@ -141,10 +141,10 @@
                                             </div>
                                             <ul class="blog_meta list_style">
                                                 <li>
-                                                    <a href="#">{{ article.author }}<i class="lnr lnr-user"></i></a>
+                                                    <a href="#">{{ articl.author }}<i class="lnr lnr-user"></i></a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">{{ article.date }}<i class="lnr lnr-calendar-full"></i></a>
+                                                    <a href="#">{{ articl.date }}<i class="lnr lnr-calendar-full"></i></a>
                                                 </li>
                                                 <li>
                                                     <a href="#">1.2M Views<i class="lnr lnr-eye"></i></a>
@@ -157,12 +157,12 @@
                                     </div>
                                     <div class="col-md-9">
                                         <div class="blog_post">
-                                            {% if article.photo %}<img src="{{ article.photo.url }}" alt="{{ article.title }}">{% endif %}
+                                            {% if articl.photo %}<img src="{{ articl.photo.url }}" alt="{{ articl.title }}">{% endif %}
                                             <div class="blog_details">
                                                 <a href="#">
-                                                    <h2>{{ article.tile }}</h2>
+                                                    <h2>{{ articl.tile }}</h2>
                                                 </a>
-                                                {{ article.summary }}...
+                                                {{ articl.summary }}...
                                                 <a href="#" class="view_btn button_hover">View More</a>
                                             </div>
                                         </div>

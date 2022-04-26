@@ -9,7 +9,7 @@ from django.contrib import messages
 # sariq dev
 from django.views.generic import ListView,DetailView
 from django.views.generic.edit import UpdateView, DeleteView
-from .models import Article
+# from .models import Article
 
 from django.core.mail import send_mail
 from django.core.mail import *
@@ -19,50 +19,50 @@ from django.core.mail import *
 #     model = Article
 #     template_name = 'mainapp/blog-post'
 #     context={}
-def aticleList(request):
-    articles = Article.objects.all().order_by('date')
-    context = {
+# def aticleList(request):
+#     articles = Article.objects.all()
+#     context = {
         
-        "articles" : articles
-    }
-    return render(request, 'mainapp/blog-post.html', context)
+#         "articles" : articles
+#     }
+#     return render(request, 'mainapp/blog-post.html', context)
 
-def article_c(request):
-    form = ArticleForm()
-    if request.method == "POST":
-        form = ArticleForm(request.POST)
-        if form.is_valid:
-            form.save()
-            return redirect('blog_post')
+# def article_c(request):
+#     form = ArticleForm()
+#     if request.method == "POST":
+#         form = ArticleForm(request.POST)
+#         if form.is_valid:
+#             form.save()
+#             return redirect('blog_post')
         
-    context = {
-        "form" : form
-    }
-    return render(request,'mainapp/article_post.html', context)
+#     context = {
+#         "form" : form
+#     }
+#     return render(request,'mainapp/article_post.html', context)
 
-def article_u(request,pk):
-    article = Article.objects.get(id=pk) 
-    form = ArticleForm(instance=article) 
-    if request.method == "POST":
-        form = ArticleForm(instance=article)
-        if form.is_valid:
-            form.save()
-            return redirect('blog_post')
+# def article_u(request,pk):
+#     article = Article.objects.get(id=pk) 
+#     form = ArticleForm(instance=article) 
+#     if request.method == "POST":
+#         form = ArticleForm(instance=article)
+#         if form.is_valid:
+#             form.save()
+#             return redirect('blog_post')
         
-    context = {
-        "form" : form 
-    }
-    return render(request,'mainapp/article_post.thml',context)
-# Create your views here.
-def  article_d(request,pk):
-    article = Article.objects.get(id=pk)
-    if request.method == "POST":
-        article.delete()
+#     context = {
+#         "form" : form 
+#     }
+#     return render(request,'mainapp/article_post.thml',context)
+# # Create your views here.
+# def  article_d(request,pk):
+#     article = Article.objects.get(id=pk)
+#     if request.method == "POST":
+#         article.delete()
         
-    context = {
-        "article" : article
-    }
-    return render(request,"mainapp/test.html", context)
+#     context = {
+#         "article" : article
+#     }
+#     return render(request,"mainapp/test.html", context)
 def loginUser(request):
     if request.user.is_authenticated:
         return redirect('mainpage')

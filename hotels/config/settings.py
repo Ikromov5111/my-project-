@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # biz yaratgan applar
     'mainapp.apps.MainappConfig',
+    'articleapp.apps.ArticleappConfig',
     # boshqa tomondan o'rnatilgan
     'widget_tweaks',
     

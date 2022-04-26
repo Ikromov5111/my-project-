@@ -18,10 +18,10 @@ class WorkerForm(ModelForm):
         model = Worker
         fields = '__all__'
     
-class ArticleForm(ModelForm):
-    class Meta:
-        model = Article
-        fields = '__all__'
+# class ArticleForm(ModelForm):
+#     class Meta:
+#         model = Article
+#         fields = '__all__'
         
 class RoomCreateForm(ModelForm):
     class Meta:
