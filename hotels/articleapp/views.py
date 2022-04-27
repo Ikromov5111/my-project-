@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from tkinter.tix import Form
+from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.views.generic import ListView, CreateView,DetailView,UpdateView
 from .models import *
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 class ArticleListview(ListView):
     model = ArticleModel
@@ -12,14 +14,17 @@ class ArticleDetailviews(DetailView):
     template_name = "articleapp/blog-detail.html"
     
     
-class ArticleCreate(CreateView):
+class ArticleCreate(CreateView,Form):
     model = ArticleModel
     template_name = "articleapp/blog-create.html"
     
+    
+        
     fields = "__all__"
     
-    def form_valid(self,form):
-        form.instance.author = self.request.user
+    
+        
+    
         
         
     
