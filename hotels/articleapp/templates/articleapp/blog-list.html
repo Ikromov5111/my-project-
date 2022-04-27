@@ -27,7 +27,7 @@
                 </h2>
                 <div class="feature-img">
                     {% comment %} manashu joyda image ishlamayapti {% endcomment %}
-                    <img class="img-fluid" src="{{ post.image }}" alt="">
+                    <img class="img-fluid" src="{{ post.image.url }}" alt="{{post.title}}">
                 </div>
             </div>
             <div class="col-lg-3  col-md-3">
@@ -73,7 +73,8 @@
             </div>
             <div class="col-lg-9 col-md-9 blog_details">
                 <p class="excert">
-                    {{ post.body }}
+                    {{ post.body| truncatewords:30 }}
+                    <a href="{% url "blog-detail" post.pk %}">more</a>
                 </p>
             </div>
         </div>

@@ -8,7 +8,7 @@ class ArticleModel(models.Model):
     body = models.TextField()
     image = models.ImageField(upload_to = 'images/')
     author = models.ForeignKey(User, on_delete=models.SET_NULL , null = True)
-    author2 = User
+    
     
     
     def __str__(self):

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'articleapp.apps.ArticleappConfig',
     # boshqa tomondan o'rnatilgan
     'widget_tweaks',
+    'crispy_forms',
     
     
 ]
@@ -151,4 +152,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = "31085111"
 
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
